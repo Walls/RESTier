@@ -92,7 +92,7 @@ namespace Microsoft.Restier.Core.Tests
                 services.MakeTransient<ISomeService>()
                     .AddService<ISomeService>((sp, next) => first)
                     .AddService<ISomeService, SomeService2>()
-                    .AddInstance("Text");
+                    .AddSingleton("Text");
 
                 return services;
             }
@@ -122,7 +122,7 @@ namespace Microsoft.Restier.Core.Tests
                     Value = 1
                 })
                     .AddService<ISomeService, SomeService3>()
-                    .AddInstance(new SomeService
+                    .AddSingleton(new SomeService
                     {
                         Value = 2
                     })
@@ -160,7 +160,7 @@ namespace Microsoft.Restier.Core.Tests
                     {
                         Value = 2
                     })
-                    .AddInstance(new SomeService
+                    .AddSingleton(new SomeService
                     {
                         Value = 0
                     })
@@ -195,13 +195,20 @@ namespace Microsoft.Restier.Core.Tests
 
         private class SomeService2 : ISomeService
         {
+            private string _value;
             // The string value will be retrieved via api.Context.GetApiService<string>()
             public SomeService2(string value = "4")
             {
-                Value = value;
+                _value = value;
             }
 
-            public string Value { get; }
+            public string Value
+            {
+                get
+                {
+                    return _value;
+                }
+            }
 
             protected ISomeService Inner { get; set; }
 
@@ -218,26 +225,48 @@ namespace Microsoft.Restier.Core.Tests
 
         private class SomeService3 : ISomeService
         {
+            private string _value;
+            private SomeService _service1;
+            private SomeService _service2;
+
             protected ISomeService next = null;
 
             public SomeService3(string value, SomeService dep1, SomeService dep2)
             {
-                Value = value;
-                Param2 = dep1;
-                Param3 = dep2;
+                _value = value;
+                _service1 = dep1;
+                _service2 = dep2;
             }
 
             public SomeService3(SomeService dep1)
             {
-                Value = "4";
-                Param2 = Param3 = dep1;
+                _value = "4";
+                _service1 = _service2 = dep1;
             }
 
-            public string Value { get; }
+            public string Value
+            {
+                get
+                {
+                    return _value;
+                }
+            }
 
-            public SomeService Param2 { get; }
+            public SomeService Param2
+            {
+                get
+                {
+                    return _service1;
+                }
+            }
 
-            public SomeService Param3 { get; }
+            public SomeService Param3
+            {
+                get
+                {
+                    return _service2;
+                }
+            }
 
             public string Call()
             {

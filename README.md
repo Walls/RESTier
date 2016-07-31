@@ -23,8 +23,8 @@ The project currently has two branches: [master](https://github.com/OData/RESTie
 
 The master branch has the following libraries:
 - [RESTier Core](https://www.nuget.org/packages/Microsoft.Restier.Core/) (namespace `Microsoft.Restier.Core`):<br />The RESTier Core contains framework classes like API-related logic, query inspector/filter/expander/sourcer/executor, convention-based logic like model builder.
-- [RESTier WebApi Publisher](https://www.nuget.org/packages/Microsoft.Restier.WebApi/) (namespace `Microsoft.Restier.WebApi`):<br />The RESTier WebApi Publisher contains classes to publish the data source as an OData service based on Web API OData.
-- [RESTier EntityFramework Provider](https://www.nuget.org/packages/Microsoft.Restier.EntityFramework/) (namespace `Microsoft.Restier.EntityFramework`):<br />The RESTier EntityFramework Provider contains classes to access data sources exposed with Entity Framework library.
+- [RESTier OData Publisher](https://www.nuget.org/packages/Microsoft.Restier.Publishers.Odata/) (namespace `Microsoft.Restier.Publishers.Odata`):<br />The RESTier OData Publisher contains classes to publish the data source as an OData service based on Web API OData.
+- [RESTier EntityFramework Provider](https://www.nuget.org/packages/Microsoft.Restier.Providers.EntityFramework/) (namespace `Microsoft.Restier.Providers.EntityFramework`):<br />The RESTier EntityFramework Provider contains classes to access data sources exposed with Entity Framework library.
 - [RESTier Security](https://www.nuget.org/packages/Microsoft.Restier.Security/) (namespace `Microsoft.Restier.Security`):<br />The RESTier Security contains classes and methods for security control, it is not in active development state and will not be part of first GA release.
 
 For these libraries, we accept bug reports, feature requirements and pull requests. 
@@ -71,3 +71,13 @@ There are many ways for you to contribute to RESTier. The easiest way is to part
 - Questions<br />Ask questions on [Stack Overflow](http://stackoverflow.com/questions/ask?tags=odata).
 - Feedback<br />Please send mails to [odatafeedback@microsoft.com](mailto:odatafeedback@microsoft.com).
 - Team blog<br />Please visit [http://blogs.msdn.com/b/odatateam/](http://blogs.msdn.com/b/odatateam/) and [http://www.odata.org/blog/](http://www.odata.org/blog/).
+
+## Thank You!
+
+We’re using NDepend to analyze and increase code quality.
+
+[![NDepend](images/ndependlogo.png)](http://www.ndepend.com)
+
+## Code of Conduct
+
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.

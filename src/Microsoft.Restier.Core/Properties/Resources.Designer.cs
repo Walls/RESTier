@@ -142,6 +142,15 @@ namespace Microsoft.Restier.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} is not a supported EDM type..
+        /// </summary>
+        internal static string EdmTypeNotSupported {
+            get {
+                return ResourceManager.GetString("EdmTypeNotSupported", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Element type cannot be found for &apos;{0}&apos;..
         /// </summary>
         internal static string ElementTypeNotFound {
@@ -300,6 +309,15 @@ namespace Microsoft.Restier.Core.Properties {
         internal static string QuerySourcerMissing {
             get {
                 return ResourceManager.GetString("QuerySourcerMissing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The request resource is not found..
+        /// </summary>
+        internal static string ResourceNotFound {
+            get {
+                return ResourceManager.GetString("ResourceNotFound", resourceCulture);
             }
         }
         
